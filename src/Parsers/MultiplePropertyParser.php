@@ -1,6 +1,6 @@
 <?php
 
-namespace BeFriends\Admin\FormCreator\DocBlock\Parsers;
+namespace michaelmeelis\DocBlockModelParser\Parsers;;
 
 
 class MultiplePropertyParser extends BasePropertyParser
