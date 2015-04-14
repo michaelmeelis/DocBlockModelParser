@@ -1,6 +1,6 @@
 <?php
 
-namespace BeFriends\Admin\FormCreator\DocBlock\Model;
+namespace michaelmeelis\DocBlockModelParser\Model;
 
 
 class SingleProperty extends BaseProperty

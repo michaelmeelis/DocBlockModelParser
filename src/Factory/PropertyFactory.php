@@ -1,6 +1,6 @@
 <?php
 
-namespace BeFriends\Admin\FormCreator\DocBlock\Factory;
+namespace michaelmeelis\DocBlockModelParser\Factory;
 
 
 use BeFriends\Admin\FormCreator\Collections\PropertyCollection;
