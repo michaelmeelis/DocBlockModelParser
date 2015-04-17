@@ -18,13 +18,13 @@ abstract class BasePropertyParser
 
     public function __construct($model)
     {
-        $this->idFieldNamePostFix = SELF::PROPERTY_POSTFIX_ID;
+        $this->idFieldNamePostFix = self::PROPERTY_POSTFIX_ID;
         $this->model = $model;
 
-        $this->baseProperties = $this->getProperties(SELF::PROPERTY_BASE_NAME);
+        $this->baseProperties = $this->getProperties(self::PROPERTY_BASE_NAME);
         $this->basePropertiesKeys = array_keys($this->baseProperties);
 
-        $this->readProperties = $this->getProperties(SELF::PROPERTY_READ_NAME);
+        $this->readProperties = $this->getProperties(self::PROPERTY_READ_NAME);
     }
 
     abstract public function parse();
