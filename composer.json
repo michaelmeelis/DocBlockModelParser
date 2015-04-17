@@ -30,7 +30,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "michaelmeelis\\DocBlockModelParser\\tests": "tests"
+            "michaelmeelis\\DocBlockModelParser\\tests\\": "tests"
         }
     },
     "extra": {
