@@ -1,0 +1,24 @@
+<?php
+
+namespace michaelmeelis\DocBlockModelParser\tests\Mock;
+
+use michaelmeelis\DocBlockModelParser\Interfaces\ModelInterface;
+
+/**
+ * Class ModelOnlyProperties
+ * @package michaelmeelis\DocBlockModelParser\test\Mock
+ * @property integer $id
+ * @property string $name
+ *
+ */
+class ModelOnlyProperties implements ModelInterface
+{
+
+    /**
+     * @return string    return the name of the table that is connected with the model
+     */
+    public function getTable()
+    {
+        return 'foobar';
+    }
+}
