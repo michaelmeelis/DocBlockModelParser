@@ -1,5 +1,5 @@
 {
-    "name": "michaelmeelis/DocBlockModelParser",
+    "name": "michaelmeelis/docblock-model-parser",
     "description": "This package will parse the doc block into DB relations",
     "keywords": [
         "docblock",
@@ -7,7 +7,7 @@
         "database",
         "properties"
     ],
-    "homepage": "https://github.com/michaelmeelis/DocBlockModelParser",
+    "homepage": "https://github.com/michaelmeelis/docblock-model-parser",
     "license": "MIT",
     "authors": [
         {
