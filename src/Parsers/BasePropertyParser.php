@@ -83,12 +83,9 @@ abstract class BasePropertyParser
 
     public function getBasePropertyType($basePropertyName)
     {
-        if (!$basePropertyName) {
-            return '';
-        }
-        
         return $this->baseProperties[$basePropertyName];
     }
+
 
     /**
      * Compare the normal existing fields to the read properties from the ide helper
