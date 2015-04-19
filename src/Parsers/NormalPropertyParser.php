@@ -9,7 +9,7 @@ class NormalPropertyParser extends BasePropertyParser
     public function parse()
     {
         $normalProperties = [];
-        foreach ($this->baseProperties as $valueType => $propertyName) {
+        foreach ($this->baseProperties as $propertyName => $valueType) {
             if (!$this->checkIfId($propertyName)) {
                 $normalProperties[$valueType] = $propertyName;
             }
@@ -24,7 +24,8 @@ class NormalPropertyParser extends BasePropertyParser
             return true;
         }
 
-        if (strpos($propertyName, \Config::get('form_creator.idPostFix')) === true) {
+        $lengthPostFix = strlen(BasePropertyParser::PROPERTY_POSTFIX_ID);
+        if (substr($propertyName, -$lengthPostFix) == BasePropertyParser::PROPERTY_POSTFIX_ID){
             return true;
         }
 
