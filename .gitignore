@@ -9,3 +9,6 @@
 .idea_modules/
 
 vendor
+
+# ignore the folder in which all the build results come
+build
