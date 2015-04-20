@@ -18,10 +18,10 @@
         }
     ],
     "require": {
-        "php" : ">=5.5.0"
+        "php" : ">=5.4.0"
     },
     "require-dev": {
-        "phpunit/phpunit" : "4.*"
+        "phpunit/phpunit" : "4.6.*"
     },
     "autoload": {
         "psr-4": {
@@ -30,7 +30,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "michaelmeelis\\DocBlockModelParser\\tests": "tests"
+            "michaelmeelis\\DocBlockModelParser\\tests\\": "tests"
         }
     },
     "extra": {

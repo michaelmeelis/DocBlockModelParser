@@ -1,16 +1,16 @@
 <?php
 
-namespace BeFriends\Admin\FormCreator\DocBlock\Factory;
+namespace michaelmeelis\DocBlockModelParser\Factory;
 
 
-use BeFriends\Admin\FormCreator\Collections\PropertyCollection;
-use BeFriends\Admin\FormCreator\DocBlock\Model\MultipleProperty;
-use BeFriends\Admin\FormCreator\DocBlock\Model\NormalProperty;
-use BeFriends\Admin\FormCreator\DocBlock\Model\SingleProperty;
-use BeFriends\Admin\FormCreator\DocBlock\Parsers\BasePropertyParser;
-use BeFriends\Admin\FormCreator\DocBlock\Parsers\MultiplePropertyParser;
-use BeFriends\Admin\FormCreator\DocBlock\Parsers\NormalPropertyParser;
-use BeFriends\Admin\FormCreator\DocBlock\Parsers\SinglePropertyParser;
+use michaelmeelis\DocBlockModelParser\Collections\PropertyCollection;
+use michaelmeelis\DocBlockModelParser\Model\MultipleProperty;
+use michaelmeelis\DocBlockModelParser\Model\NormalProperty;
+use michaelmeelis\DocBlockModelParser\Model\SingleProperty;
+use michaelmeelis\DocBlockModelParser\Parsers\BasePropertyParser;
+use michaelmeelis\DocBlockModelParser\Parsers\MultiplePropertyParser;
+use michaelmeelis\DocBlockModelParser\Parsers\NormalPropertyParser;
+use michaelmeelis\DocBlockModelParser\Parsers\SinglePropertyParser;
 
 class PropertyFactory
 {
@@ -87,7 +87,8 @@ class PropertyFactory
             $parser->getBasePropertyType($basePropertyName)
         );
         $property->setModelClassName($propertyClassName);
-        $property->table = with(new $propertyClassName)->getTable();
+        $model = new $propertyClassName();
+        $property->table = $model->getTable();
 
         return $property;
     }
@@ -99,11 +100,11 @@ class PropertyFactory
     private function buildPropertyType(BasePropertyParser $parser)
     {
         if ($parser instanceof MultiplePropertyParser) {
-            return 'BeFriends\Admin\FormCreator\DocBlock\Model\MultipleProperty';
+            return 'michaelmeelis\DocBlockModelParser\Model\MultipleProperty';
         }
 
         if ($parser instanceof SinglePropertyParser) {
-            return 'BeFriends\Admin\FormCreator\DocBlock\Model\SingleProperty';
+            return 'michaelmeelis\DocBlockModelParser\Model\SingleProperty';
         }
 
         throw new \BadMethodCallException('Only used for model properties');

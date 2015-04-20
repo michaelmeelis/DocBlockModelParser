@@ -1,6 +1,6 @@
 <?php
 
-namespace BeFriends\Admin\FormCreator\DocBlock\Parsers;
+namespace michaelmeelis\DocBlockModelParser\Parsers;
 
 
 class SinglePropertyParser extends BasePropertyParser
@@ -10,12 +10,11 @@ class SinglePropertyParser extends BasePropertyParser
     {
         $readProperties = [];
         foreach ($this->readProperties as $readPropertyKey => $readProperty) {
-            if ($this->getBasePropertyName($readProperty) !== false) {
+            if ($this->getBasePropertyName($readPropertyKey) !== false) {
                 $readProperties[$readPropertyKey] = $this->parseClassName($readProperty);
             }
         }
 
         return $readProperties;
     }
-
 }
