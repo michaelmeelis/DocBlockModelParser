@@ -6,6 +6,10 @@ use michaelmeelis\DocBlockModelParser\Interfaces\ModelInterface;
 
 /**
  * Class ModelOnlyProperties
+ *
+ * This will assert to a count of 1 with normal properties.
+ * Id is left out because it is reserved
+ *
  * @package michaelmeelis\DocBlockModelParser\test\Mock
  * @property integer $id
  * @property string $name
