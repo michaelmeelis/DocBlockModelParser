@@ -76,11 +76,11 @@ abstract class BaseCollection implements \ArrayAccess, \Countable, \IteratorAggr
      */
     public function offsetSet($offset, $value)
     {
-        if (is_null($offset)) {
-            throw new \BadMethodCallException('Key must be used with the Collection');
+        if (empty($offset)) {
+            $this->collection[] = $value;
+        } else {
+            $this->collection[$offset] = $value;
         }
-
-        $this->collection[$offset] = $value;
     }
 
     /**

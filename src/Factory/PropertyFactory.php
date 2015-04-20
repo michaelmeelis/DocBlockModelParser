@@ -79,7 +79,7 @@ class PropertyFactory
      */
     private function buildModelProperty(BasePropertyParser $parser, $propertyName, $propertyClassName)
     {
-        $basePropertyName = $parser->getBasePropertyName($propertyClassName);
+        $basePropertyName = $parser->getBasePropertyName($propertyName);
         $propertyType = $this->buildPropertyType($parser);
         $property = new $propertyType(
             $propertyName,
