@@ -1,6 +1,6 @@
 <?php
 
-namespace BeFriends\Admin\FormCreator\DocBlock\Parsers;
+namespace michaelmeelis\DocBlockModelParser\Parsers;
 
 
 use phpDocumentor\Reflection\DocBlock;
@@ -8,19 +8,23 @@ use phpDocumentor\Reflection\DocBlock\Tag\ParamTag;
 
 abstract class BasePropertyParser
 {
+    const PROPERTY_POSTFIX_ID = '_id';
+    const PROPERTY_BASE_NAME = 'property';
+    const PROPERTY_READ_NAME = 'property-read';
+
     protected $idFieldNamePostFix;
     protected $model;
     protected $baseProperties;
 
     public function __construct($model)
     {
-        $this->idFieldNamePostFix = \Config::get('form_creator.idPostFix');
+        $this->idFieldNamePostFix = self::PROPERTY_POSTFIX_ID;
         $this->model = $model;
 
-        $this->baseProperties = $this->getProperties(\Config::get('form_creator.docBlock.baseProperties'));
+        $this->baseProperties = $this->getProperties(self::PROPERTY_BASE_NAME);
         $this->basePropertiesKeys = array_keys($this->baseProperties);
 
-        $this->readProperties = $this->getProperties(\Config::get('form_creator.docBlock.readProperties'));
+        $this->readProperties = $this->getProperties(self::PROPERTY_READ_NAME);
     }
 
     abstract public function parse();
@@ -79,12 +83,9 @@ abstract class BasePropertyParser
 
     public function getBasePropertyType($basePropertyName)
     {
-        if (!$basePropertyName) {
-            return '';
-        }
-        
         return $this->baseProperties[$basePropertyName];
     }
+
 
     /**
      * Compare the normal existing fields to the read properties from the ide helper
